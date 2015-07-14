@@ -1,11 +1,10 @@
 package com.jiahaoliuliu.customizeactionbarbystyle;
 
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +12,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Customize the action bar
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setCustomView(R.layout.my_customised_actionbar_layout);
+
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setDisplayUseLogoEnabled(false);
+        actionBar.setDisplayShowHomeEnabled(false);
+
+        getWindow().setBackgroundDrawableResource(android.R.color.white);
+
     }
 
     @Override
