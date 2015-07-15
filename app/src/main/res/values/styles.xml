@@ -22,6 +22,8 @@
     <!-- Source http://stackoverflow.com/questions/9733312/changing-overflow-icon-in-the-action-bar -->
     <style name="OverFlow" parent="@android:style/Widget.Holo.ActionButton.Overflow">
         <item name="android:src">@drawable/ic_action_overflow</item>
+        <item name="android:minWidth">@dimen/action_bar_overflow_button</item>
+        <item name="android:padding">0dp</item>
     </style>
 
     <color name="Indigo">#3F51B5</color>
