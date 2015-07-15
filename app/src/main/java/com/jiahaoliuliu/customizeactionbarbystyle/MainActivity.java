@@ -1,12 +1,18 @@
 package com.jiahaoliuliu.customizeactionbarbystyle;
 
+import android.annotation.TargetApi;
 import android.app.ActionBar;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class MainActivity extends FragmentActivity {
+
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +30,15 @@ public class MainActivity extends FragmentActivity {
 
         getWindow().setBackgroundDrawableResource(android.R.color.white);
 
+        forceRTLIfSupported();
+    }
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    private void forceRTLIfSupported() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            Log.v(TAG, "Changing layout direcction to Right to Left");
+            getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+        }
     }
 
     @Override
